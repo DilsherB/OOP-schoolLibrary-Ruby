@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h3><b>Decode Morse code</b></h3>
+  <h3><b>SCHOOL LIBRARY</b></h3>
 
 </div>
 
@@ -11,7 +11,7 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)  
+    - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -23,11 +23,9 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-# 📖 [Decode Morse code] <a name="about-project"></a>
+# 📖 [School Library] <a name="about-project"></a>
 
-> In this project a Morse code message will be decoded and the equivalent string would be represented. Built using Ruby.
-
-**[Decode Morse code]** is...
+- In this project I have created three basic files 'person.rb', 'student.rb' and 'teacher.rb'. In these files I have used morphysim and inherits 'Person' class in 'Student' and 'Teacher' class. initializers(Constructors) are defined in each class. Some methods also created in each class.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -42,14 +40,14 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Key features of the application.
+- Key features of the application.
 
-- **[Read Morse code message]**
-- **[Decode Morse code into plain text]**
-
+- **[Morphysim used]**
+- **[Getters and Setters used]**
+- **[Initializers(constructor) used]**
+- **[private methods for each class used]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -58,8 +56,9 @@ To get a local copy up and running, follow these steps.
 ### Prerequisites
 
 In order to run this project you need:
+
 ```
-  Ruby 
+  Ruby
 ```
 
 ### Setup
@@ -67,9 +66,9 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```
-  $ git clone https://github.com/DilsherB/morseRuby
+  $ git clone https://github.com/DilsherB/OOP-schoolLibrary-Ruby.git
 
-  $ cd morseRuby
+  $ cd OOP-schoolLibrary-Ruby
 ```
 
 ### Usage
@@ -77,8 +76,9 @@ Clone this repository to your desired folder:
 To run the project, execute the following command:
 
 ```sh
-  ruby .\morseToText.rb
+  ruby .\person.rb
 ```
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 👥 Authors <a name="authors"></a>
@@ -89,15 +89,11 @@ To run the project, execute the following command:
 - Twitter: [@\_brilliantMindz](https://twitter.com/_brilliantMindz)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/dilsher-balouch/)
 
-👤 **Inoulen**
-
-- GitHub: [@K Inoulen Shanongba](https://github.com/lenkon)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Features to be added.
+- Features to be added.
 
 - [ ] **[Add more projects]**
 - [ ] **[Add milestones and achievements]**
@@ -120,7 +116,7 @@ If you like this project please rate and give a star.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for sharing the tools and requirements.
+- I would like to thank Microverse for sharing the tools and requirements.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
