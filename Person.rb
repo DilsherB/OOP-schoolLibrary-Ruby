@@ -7,3 +7,7 @@ class Person
     @age = age
     @parent_permission = true
   end
+    
+  def of_age?
+    @age >= 18
+  end
