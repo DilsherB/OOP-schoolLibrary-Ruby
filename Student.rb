@@ -6,3 +6,7 @@ class Student < Person
   def initialize(class_room)
     @class_room = class_room
   end
+
+  def play_hookey
+    puts "¯\(ツ)/¯"
+  end
