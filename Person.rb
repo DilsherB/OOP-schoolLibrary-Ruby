@@ -15,3 +15,17 @@ class Person
   def can_use_services?
     of_age? || @parent_permission
   end
+  
+  private
+
+  def id
+    @id
+  end
+
+  def name
+    @name
+  end
+
+  def age
+    @age
+  end
