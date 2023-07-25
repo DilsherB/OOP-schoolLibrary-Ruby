@@ -47,6 +47,7 @@
 - **[Initializers(constructor) used]**
 - **[private methods for each class used]**
 - **[decorator implemented]**
+- **[combination implemented]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
