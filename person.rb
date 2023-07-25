@@ -19,7 +19,5 @@ class Person
     of_age? || @parent_permission
   end
 
-  def correct_name
-    @correct_name
-  end
+  attr_reader :correct_name
 end
