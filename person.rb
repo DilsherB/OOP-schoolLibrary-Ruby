@@ -1,7 +1,6 @@
 require_relative 'nameable'
 
-class Person
-  include Nameable
+class Person < Nameable
   attr_accessor :id, :name, :age
 
   def initialize(age, parent_permission: true, name: 'Unknown')
