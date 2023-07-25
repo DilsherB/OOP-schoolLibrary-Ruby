@@ -1,10 +1,10 @@
 require_relative 'nameable'
 
-class Person
-  include Nameable
+class Person < Nameable
   attr_accessor :id, :name, :age
 
   def initialize(age, parent_permission: true, name: 'Unknown')
+    super()
     @id = Random.rand(1..10_000)
     @age = age
     @parent_permission = parent_permission
@@ -19,7 +19,5 @@ class Person
     of_age? || @parent_permission
   end
 
-  def correct_name
-    @correct_name
-  end
+  attr_reader :correct_name
 end
