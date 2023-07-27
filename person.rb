@@ -24,4 +24,5 @@ class Person < Nameable
   def correct_name
     @name
   end
+  private :of_age?
 end
