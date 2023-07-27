@@ -14,7 +14,6 @@ class App
   end
 
   def list_all_books
-    # Display all books if available, otherwise show a message
     if @books.empty?
       puts 'No books available'
     else
@@ -25,7 +24,6 @@ class App
   end
 
   def list_all_people
-    # Display all people if available, otherwise show a message
     if @people.empty?
       puts 'No person created'
     else
@@ -36,7 +34,6 @@ class App
   end
 
   def create_person
-    # Prompt user to create a student or teacher and call corresponding method
     print 'Do you want to create a student(1) or a teacher(2)? [Input the number]:'
     choice = gets.chomp.to_i
 
@@ -52,7 +49,6 @@ class App
   end
 
   def create_student
-    # Prompt user to create a student with required details and add to the people array
     print 'Age: '
     age = gets.chomp.to_i
     print 'Name: '
@@ -68,7 +64,6 @@ class App
   end
 
   def create_teacher
-    # Prompt user to create a teacher with required details and add to the people array
     print 'Age: '
     age = gets.chomp.to_i
     print 'Name: '
@@ -81,7 +76,6 @@ class App
   end
 
   def create_book
-    # Prompt user to create a book with required details and add to the books array
     print 'Title: '
     title = gets.chomp
     print 'Author: '
@@ -92,7 +86,6 @@ class App
   end
 
   def create_rental
-    # Check if books and people exist, prompt user to select book and person, then create a rental
     if @books.empty?
       puts 'No books available to rent'
     else
@@ -114,7 +107,6 @@ class App
   end
 
   def display_books
-    # Display all books with corresponding index and store user-selected book
     @books.each_with_index do |book, index|
       puts "#{index}) Title: #{book.title}, Author: #{book.author}"
     end
@@ -123,7 +115,6 @@ class App
   end
 
   def display_people
-    # Display all people with corresponding index and store user-selected person
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
@@ -132,7 +123,6 @@ class App
   end
 
   def list_rentals_of_person
-    # Prompt user for a person's ID and display their rentals if they exist
     print 'ID of Person: '
     id = gets.chomp.to_i
     person_selected = @people.select { |person| person.id == id }.first
