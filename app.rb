@@ -7,7 +7,7 @@ require_relative 'book'
 require_relative 'student'
 require_relative 'teacher'
 
-class Ap
+class App
   def initialize(choice, books = [], people = [])
     @choice = choice
     @book = book
