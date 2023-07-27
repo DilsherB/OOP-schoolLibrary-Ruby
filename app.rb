@@ -53,20 +53,48 @@ class Ap
         person = UserInput.getString('Enter person', 'Please enter a person')
         @rentals << Rental.new(date, book, person)
       when 4
-        puts 'List all books'
-        @books.each do |book|
-          puts book.title
+        def list_books(books)
+          if books.empty?
+            puts 'Book list is empty, please add first to see list'
+            return
+          end
+          puts 'List of books'
+          books.each_with_index do |book, index|
+            puts "#{index + 1}) #{book.title} by #{book.author}"
+          end
         end
+        list_books(@books)
       when 5
-        puts 'List all people'
-        @people.each do |person|
-          puts person.name
+        def list_pople(people)
+          if people.empty?
+            puts 'People list is empty, please add first to see list'
+            return
+          end
+          puts 'List of people'
+          people.each_with_index do |person, index|
+            puts "#{index + 1}) #{person.name} (#{person.class})"
+          end
         end
+        list_people(@people)
       when 6
-        puts 'List all rentals'
-        @rentals.each do |rental|
-          puts rental.date
+        def list_rentals(people)
+          if people.empty
+            puts 'People list is empty, please add first to see list'
+            return
+          end
+          puts 'Select a person from the following list'
+          people.each_with_index do |person, index|
+            puts "#{index + 1}) #{person.name}"
+          end
+          person_index = UserInput.getNumber('Enter number', 'Please enter a number')
+          person = people[person_index - 1]
+          puts "Selected person: #{person.name}"
+          puts 'List of rentals'
+          person.rentals.each do |rental|
+            puts rental.book
+          end
         end
+        list_rentals(@people)
       when 7
         puts 'Exit'
         break
