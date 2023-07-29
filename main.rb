@@ -1,5 +1,5 @@
-require_relative 'app'
-require_relative 'options'
+require_relative './app/app'
+require_relative './app/options'
 
 def main
   app = App.new
