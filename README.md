@@ -2,7 +2,9 @@
 
 <div align="center">
 
-  <h3><b>SCHOOL LIBRARY</b></h3>
+  <img src="./assets/ruby logo.png"></img>
+
+  <h1><b>SCHOOL LIBRARY</b></h1>
 
 </div>
 
