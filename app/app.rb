@@ -1,9 +1,9 @@
 # Include necessary class files
-require_relative 'person'
-require_relative 'student'
-require_relative 'teacher'
-require_relative 'book'
-require_relative 'rental'
+require_relative '../classes/person'
+require_relative '../classes/student'
+require_relative '../classes/teacher'
+require_relative '../classes/book'
+require_relative '../classes/rental'
 
 class App
   attr_accessor :books, :people
