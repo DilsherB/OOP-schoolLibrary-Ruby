@@ -28,6 +28,9 @@
 # 📖 [School Library] <a name="about-project"></a>
 
 - In this project I have created three basic files 'person.rb', 'student.rb' and 'teacher.rb'. In these files I have used morphysim and inherits 'Person' class in 'Student' and 'Teacher' class. initializers(Constructors) are defined in each class. Some methods also created in each class.
+In the second phase I added more classes to implement decorators.
+In the third phase I added some more classes to implement associations.
+In the fourth phase I added some more classes to run the program in comand prompt.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -50,6 +53,8 @@
 - **[private methods for each class used]**
 - **[decorator implemented]**
 - **[combination implemented]**
+- **[associations implemented]**
+- **[basic UI implemented]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -63,6 +68,7 @@ In order to run this project you need:
 
 ```
   Ruby
+  Bundler gem installed on system (run 'gem install bundler' in terminal if not already)
 ```
 
 ### Setup
@@ -77,10 +83,10 @@ Clone this repository to your desired folder:
 
 ### Usage
 
-To run the project, execute the following command:
+To run the project, execute the following command in the console or command prompt:
 
 ```sh
-  ruby .\person.rb
+  ruby .\main.rb
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -100,7 +106,7 @@ To run the project, execute the following command:
 - Features to be added.
 
 - [ ] **[Add more projects]**
-- [ ] **[Add milestones and achievements]**
+- [ ] **[use Database to store data]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
