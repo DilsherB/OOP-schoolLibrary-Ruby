@@ -26,31 +26,14 @@ class App
       puts 'No person created yet'
     else
       @people.each_with_index do |person, index|
+        info = "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
         if person.is_a?(Teacher)
-          puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, +
-          Age: #{person.age} , Specialization: #{person.specialization}"
+          info += " Specialization: #{person.specialization}"
         elsif person.is_a?(Student)
-          puts "#{index}) [#{person.class} 🧍] Name: #{person.name}, ID: #{person.id}, +
-          Age: #{person.age} , Classroom: #{person.classroom}"
-        else
-          puts "#{index}) [#{person.class} 👨‍🏫] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+          info += " Classroom: #{person.classroom}"
         end
+        puts info
       end
-    end
-  end
-
-  def create_person
-    print "1 to create a student\n2 to create a teacher\n [Input the number]:"
-    choice = gets.chomp.to_i
-
-    case choice
-    when 1
-      create_student
-    when 2
-      create_teacher
-    else
-      puts 'Invalid choice. Please try again.'
-      create_person
     end
   end
 
