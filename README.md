@@ -40,7 +40,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Key features of the application.
+Key features of the application.
 
 - **[Morphysim used]**
 - **[Getters and Setters used]**
