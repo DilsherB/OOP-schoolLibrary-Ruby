@@ -55,6 +55,7 @@ In the fourth phase I added some more classes to run the program in comand promp
 - **[combination implemented]**
 - **[associations implemented]**
 - **[basic UI implemented]**
+- **[made sure to follow DRY, SOLID, YAGNI and KISS]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -107,6 +108,10 @@ To run the project, execute the following command in the console or command prom
 
 - [ ] **[Add more projects]**
 - [ ] **[use Database to store data]**
+- [ ] **[prevent to retal one book to more than 1 persons]**
+- [ ] **[prevent to retal one book to same person twice at the same time]**
+- [ ] **[add a feature that takes back the book from person and show in DB again]**
+- [ ] **[check the person is member or not if member then allot book otherwise ask to be a member]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
