@@ -17,25 +17,9 @@ class App
     if @books.empty?
       puts 'No books available'
     else
-      @books.each_with_index { |book, index| puts "#{index}) 📚 Title: '#{book.title}', Author: '#{book.author}'"}
+      @books.each_with_index { |book, index| puts "#{index}) 📚 Title: '#{book.title}', Author: '#{book.author}'" }
     end
   end
-
-  # def list_all_people
-  #   if @people.empty?
-  #     puts 'No person created yet'
-  #   else
-  #     @people.each do |person|
-  #       name = person.name
-  #       id = person.id
-  #       age = person.age
-  #       specialization = person.specialization if person.is_a?(Teacher) 
-  #       classroom = person.classroom if person.is_a?(Student)
-
-  #       puts "[#{person.class}] Name: '#{name}', ID: '#{id}', Age: '#{age}', Specialization/Classroom: #{specialization || classroom}"
-  #     end
-  #   end
-  # end
 
   def list_all_people
     if @people.empty?
