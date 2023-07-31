@@ -17,28 +17,44 @@ class App
     if @books.empty?
       puts 'No books available'
     else
-      @books.each { |book| puts "Title: '#{book.title}', Author: '#{book.author}'"}
+      @books.each_with_index { |book, index| puts "#{index}) 📚 Title: '#{book.title}', Author: '#{book.author}'"}
     end
   end
+
+  # def list_all_people
+  #   if @people.empty?
+  #     puts 'No person created yet'
+  #   else
+  #     @people.each do |person|
+  #       name = person.name
+  #       id = person.id
+  #       age = person.age
+  #       specialization = person.specialization if person.is_a?(Teacher) 
+  #       classroom = person.classroom if person.is_a?(Student)
+
+  #       puts "[#{person.class}] Name: '#{name}', ID: '#{id}', Age: '#{age}', Specialization/Classroom: #{specialization || classroom}"
+  #     end
+  #   end
+  # end
 
   def list_all_people
     if @people.empty?
       puts 'No person created yet'
     else
-      @people.each do |person|
+      @people.each_with_index do |person, index|
         if person.is_a?(Teacher)
-          puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age} , Specialization: #{person.specialization}"
+          puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age} , Specialization: #{person.specialization}"
         elsif person.is_a?(Student)
-          puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age} , Classroom: #{person.classroom}"
+          puts "#{index}) [#{person.class} 🧍] Name: #{person.name}, ID: #{person.id}, Age: #{person.age} , Classroom: #{person.classroom}"
         else
-          puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+          puts "#{index}) [#{person.class} 👨‍🏫] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
         end
       end
     end
   end
 
   def create_person
-    print 'Do you want to create a student(1) or a teacher(2)? [Input the number]:'
+    print "1 to create a student\n2 to create a teacher\n [Input the number]:"
     choice = gets.chomp.to_i
 
     case choice
@@ -62,7 +78,7 @@ class App
     parent_permission = parent_permission.downcase != 'n'
     print 'Classroom: '
     classroom = gets.chomp
-    puts "Student '#{name}' created successfully"
+    puts "🎉 Student '#{name}' created successfully"
     @people << Student.new(age, classroom, name, parent_permission: parent_permission)
   end
 
@@ -73,7 +89,7 @@ class App
     name = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp
-    puts "Teacher '#{name}' created successfully"
+    puts "🎉 Teacher '#{name}' created successfully"
     @people << Teacher.new(age, specialization, name)
   end
 
@@ -82,8 +98,7 @@ class App
     title = gets.chomp
     print 'Author: '
     author = gets.chomp
-    # book = Book.new(title, author)
-    puts "Book '#{title}' created successfully"
+    puts "🎉 Book '#{title}' created successfully"
     @books << Book.new(title, author)
   end
 
@@ -91,38 +106,34 @@ class App
     if @books.empty?
       puts 'No books available to rent'
     else
-      puts 'Select a book from the following list by number'
+      puts 'Choose a book from the following list.'
       display_books
 
       if @people.empty?
         puts 'No persons created. Kindly create a person before renting'
       else
-        puts 'Select a person from the following list (not id)'
+        puts 'Choose a person from the following list.'
         display_people
 
         print 'Date: '
         date = gets.chomp
         Rental.new(date, @selected_book, @selected_person)
-        puts 'Rental created successfully'
+        puts '🎉 Rental created successfully'
       end
     end
   end
 
-  # def display_books
-  #   @books.each_with_index { |book, index|
-  #     puts "#{index}) Title: #{book.title}, Author: #{book.author}"
-  # }
-  #   index = gets.chomp.to_i
-  #   @selected_book = @books[index]
-  # end
+  def display_books
+    list_all_books
+    index = gets.chomp.to_i
+    @selected_book = @books[index]
+  end
 
-  # def display_people
-  #   @people.each_with_index do |person, index|
-  #     puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-  #   end
-  #   index = gets.chomp.to_i
-  #   @selected_person = @people[index]
-  # end
+  def display_people
+    list_all_people
+    index = gets.chomp.to_i
+    @selected_person = @people[index]
+  end
 
   def list_rentals_of_person
     print 'ID of Person: '
