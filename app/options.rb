@@ -32,18 +32,17 @@ end
 
 def create_person(app)
   print "1 to create a student\n2 to create a teacher\n [Input the number]:"
-    choice = gets.chomp.to_i
+  choice = gets.chomp.to_i
 
-    case choice
-    when 1
-      app.create_student
-    when 2
-      app.create_teacher
-    else
-      puts 'Invalid choice. Please try again.'
-      create_person
-    end
-  # app.create_person
+  case choice
+  when 1
+    app.create_student
+  when 2
+    app.create_teacher
+  else
+    puts 'Invalid choice. Please try again.'
+    create_person(app)
+  end
 end
 
 def create_book(app)
