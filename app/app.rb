@@ -17,8 +17,7 @@ class App
     if @books.empty?
       puts 'No books available'
     else
-      @books.each { |book|
-      puts "Title: '#{book.title}', Author: '#{book.author}'"}
+      @books.each { |book| puts "Title: '#{book.title}', Author: '#{book.author}'"}
     end
   end
 
@@ -26,18 +25,17 @@ class App
     if @people.empty?
       puts 'No person created yet'
     else
-      @people.each { |person|
-      if person.is_a?(Teacher)
-        puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age} , Specialization: #{person.specialization}"
-      elsif person.is_a?(Student)
-        puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age} , Classroom: #{person.classroom}"
-      else
-        puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      @people.each do |person|
+        if person.is_a?(Teacher)
+          puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age} , Specialization: #{person.specialization}"
+        elsif person.is_a?(Student)
+          puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age} , Classroom: #{person.classroom}"
+        else
+          puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+        end
       end
-      }
     end
   end
-  
 
   def create_person
     print 'Do you want to create a student(1) or a teacher(2)? [Input the number]:'
