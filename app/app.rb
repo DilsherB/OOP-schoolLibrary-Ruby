@@ -17,21 +17,27 @@ class App
     if @books.empty?
       puts 'No books available'
     else
-      @books.each do |book|
-        puts "Title: '#{book.title}', Author: #{book.author}"
-      end
+      @books.each { |book|
+      puts "Title: '#{book.title}', Author: '#{book.author}'"}
     end
   end
 
   def list_all_people
     if @people.empty?
-      puts 'No person created'
+      puts 'No person created yet'
     else
-      @people.each do |person|
+      @people.each { |person|
+      if person.is_a?(Teacher)
+        puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age} , Specialization: #{person.specialization}"
+      elsif person.is_a?(Student)
+        puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age} , Classroom: #{person.classroom}"
+      else
         puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
       end
+      }
     end
   end
+  
 
   def create_person
     print 'Do you want to create a student(1) or a teacher(2)? [Input the number]:'
@@ -58,9 +64,8 @@ class App
     parent_permission = parent_permission.downcase != 'n'
     print 'Classroom: '
     classroom = gets.chomp
-    student = Student.new(age, classroom, name, parent_permission: parent_permission)
-    puts 'Person created successfully'
-    @people << student
+    puts "Student '#{name}' created successfully"
+    @people << Student.new(age, classroom, name, parent_permission: parent_permission)
   end
 
   def create_teacher
@@ -70,9 +75,8 @@ class App
     name = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp
-    teacher = Teacher.new(age, specialization, name)
-    puts 'Person created successfully'
-    @people << teacher
+    puts "Teacher '#{name}' created successfully"
+    @people << Teacher.new(age, specialization, name)
   end
 
   def create_book
@@ -80,9 +84,9 @@ class App
     title = gets.chomp
     print 'Author: '
     author = gets.chomp
-    book = Book.new(title, author)
-    puts 'Book created successfully'
-    @books << book
+    # book = Book.new(title, author)
+    puts "Book '#{title}' created successfully"
+    @books << Book.new(title, author)
   end
 
   def create_rental
@@ -106,21 +110,21 @@ class App
     end
   end
 
-  def display_books
-    @books.each_with_index do |book, index|
-      puts "#{index}) Title: #{book.title}, Author: #{book.author}"
-    end
-    index = gets.chomp.to_i
-    @selected_book = @books[index]
-  end
+  # def display_books
+  #   @books.each_with_index { |book, index|
+  #     puts "#{index}) Title: #{book.title}, Author: #{book.author}"
+  # }
+  #   index = gets.chomp.to_i
+  #   @selected_book = @books[index]
+  # end
 
-  def display_people
-    @people.each_with_index do |person, index|
-      puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
-    index = gets.chomp.to_i
-    @selected_person = @people[index]
-  end
+  # def display_people
+  #   @people.each_with_index do |person, index|
+  #     puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+  #   end
+  #   index = gets.chomp.to_i
+  #   @selected_person = @people[index]
+  # end
 
   def list_rentals_of_person
     print 'ID of Person: '
