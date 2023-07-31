@@ -27,10 +27,10 @@ class App
     else
       @people.each_with_index do |person, index|
         if person.is_a?(Teacher)
-          puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, \
+          puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, +
           Age: #{person.age} , Specialization: #{person.specialization}"
         elsif person.is_a?(Student)
-          puts "#{index}) [#{person.class} 🧍] Name: #{person.name}, ID: #{person.id}, \
+          puts "#{index}) [#{person.class} 🧍] Name: #{person.name}, ID: #{person.id}, +
           Age: #{person.age} , Classroom: #{person.classroom}"
         else
           puts "#{index}) [#{person.class} 👨‍🏫] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
