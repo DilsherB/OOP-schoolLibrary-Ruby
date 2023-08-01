@@ -14,7 +14,6 @@ class App
     @people = []
   end
 
-  # List all books in the library
   def list_all_books
     if @books.empty?
       puts 'No books available'
@@ -23,7 +22,6 @@ class App
     end
   end
 
-  # List all people (students and teachers) in the library
   def list_all_people
     if @people.empty?
       puts 'No person created yet'
@@ -37,7 +35,6 @@ class App
     end
   end
 
-  # Prompt the user to create a person (student or teacher)
   def create_person
     choice = get_user_input('Do you want to create a student(1) or a teacher(2)? [Input the number]:', :integer)
 
@@ -52,7 +49,6 @@ class App
     end
   end
 
-  # Prompt the user to create a student with required details and add to the people array
   def create_student
     age = get_user_input('Age: ', :integer)
     name = get_user_input('Name: ', :string)
@@ -63,7 +59,6 @@ class App
     @people << student
   end
 
-  # Prompt the user to create a teacher with required details and add to the people array
   def create_teacher
     age = get_user_input('Age: ', :integer)
     name = get_user_input('Name: ', :string)
@@ -73,7 +68,6 @@ class App
     @people << teacher
   end
 
-  # Prompt the user to create a book with required details and add to the books array
   def create_book
     title = get_user_input('Title: ', :string)
     author = get_user_input('Author: ', :string)
@@ -82,7 +76,6 @@ class App
     @books << book
   end
 
-  # Prompt the user to create a rental for a book and a person
   def create_rental
     if @books.empty?
       puts 'No books available to rent'
@@ -99,21 +92,18 @@ class App
     end
   end
 
-  # Display all books with corresponding index and store user-selected book
   def display_books
     list_all_books
     index = get_user_input('Select a book by number: ', :integer)
     @selected_book = @books[index - 1]
   end
 
-  # Display all people with corresponding index and store user-selected person
   def display_people
     list_all_people
     index = get_user_input('Select a person by number: ', :integer)
     @selected_person = @people[index - 1]
   end
 
-  # List rentals for a specific person by their ID
   def list_rentals_of_person
     id = get_user_input('ID of Person: ', :integer)
     person_selected = @people.find { |person| person.id == id }
