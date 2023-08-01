@@ -2,7 +2,9 @@
 
 <div align="center">
 
-  <h3><b>SCHOOL LIBRARY</b></h3>
+  <img src="./assets/ruby logo.png"></img>
+
+  <h1><b>SCHOOL LIBRARY</b></h1>
 
 </div>
 
@@ -26,6 +28,9 @@
 # 📖 [School Library] <a name="about-project"></a>
 
 - In this project I have created three basic files 'person.rb', 'student.rb' and 'teacher.rb'. In these files I have used morphysim and inherits 'Person' class in 'Student' and 'Teacher' class. initializers(Constructors) are defined in each class. Some methods also created in each class.
+In the second phase I added more classes to implement decorators.
+In the third phase I added some more classes to implement associations.
+In the fourth phase I added some more classes to run the program in comand prompt.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -48,6 +53,9 @@ Key features of the application.
 - **[private methods for each class used]**
 - **[decorator implemented]**
 - **[combination implemented]**
+- **[associations implemented]**
+- **[basic UI implemented]**
+- **[made sure to follow DRY, SOLID, YAGNI and KISS]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -61,6 +69,7 @@ In order to run this project you need:
 
 ```
   Ruby
+  Bundler gem installed on system (run 'gem install bundler' in terminal if not already)
 ```
 
 ### Setup
@@ -75,10 +84,10 @@ Clone this repository to your desired folder:
 
 ### Usage
 
-To run the project, execute the following command:
+To run the project, execute the following command in the console or command prompt:
 
 ```sh
-  ruby .\person.rb
+  ruby .\main.rb
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -91,6 +100,12 @@ To run the project, execute the following command:
 - Twitter: [@\_brilliantMindz](https://twitter.com/_brilliantMindz)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/dilsher-balouch/)
 
+👤 **Gakii Beryl**
+
+- GitHub: [@berylcl] (https://github.com/berylcl)
+- Twitter: [omg_its_beryl](https://twitter.com/omg_its_beryl)
+- LinkedIn: [gakii](https://www.linkedin.com/in/gakii-beryl/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
@@ -98,7 +113,11 @@ To run the project, execute the following command:
 - Features to be added.
 
 - [ ] **[Add more projects]**
-- [ ] **[Add milestones and achievements]**
+- [ ] **[use Database to store data]**
+- [ ] **[prevent to retal one book to more than 1 persons]**
+- [ ] **[prevent to retal one book to same person twice at the same time]**
+- [ ] **[add a feature that takes back the book from person and show in DB again]**
+- [ ] **[check the person is member or not if member then allot book otherwise ask to be a member]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
