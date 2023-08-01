@@ -19,7 +19,7 @@ class App
     if @books.empty?
       puts 'No books available'
     else
-      @books.each_with_index { |book, index| puts "#{index+1}): 📚 Title: '#{book.title}', Author: #{book.author}" }
+      @books.each_with_index { |book, index| puts "#{index + 1}): 📚 Title: '#{book.title}', Author: #{book.author}" }
     end
   end
 
@@ -29,7 +29,7 @@ class App
       puts 'No person created yet'
     else
       @people.each_with_index do |person, index|
-        info = "#{index+1}): [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+        info = "#{index + 1}): [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
         info += ", Specialization: #{person.specialization}" if person.is_a?(Teacher)
         info += ", Classroom: #{person.classroom}" if person.is_a?(Student)
         puts info
@@ -103,14 +103,14 @@ class App
   def display_books
     list_all_books
     index = get_user_input('Select a book by number: ', :integer)
-    @selected_book = @books[index-1]
+    @selected_book = @books[index - 1]
   end
 
   # Display all people with corresponding index and store user-selected person
   def display_people
     list_all_people
     index = get_user_input('Select a person by number: ', :integer)
-    @selected_person = @people[index-1]
+    @selected_person = @people[index - 1]
   end
 
   # List rentals for a specific person by their ID
