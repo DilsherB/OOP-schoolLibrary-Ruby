@@ -31,6 +31,20 @@ def create_teacher(app)
   app.create_teacher(age, name, specialization)
 end
 
+def create_person(app)
+  puts 'Do you want to create a student (1) or a teacher (2)?'
+  choice = get_integer_input('Enter the number of your choice: ')
+
+  case choice
+  when 1
+    create_student(app)
+  when 2
+    create_teacher(app)
+  else
+    puts 'Invalid choice. Please try again.'
+  end
+end
+
 def create_book(app)
   title = get_string_input('Title: ')
   author = get_string_input('Author: ')
@@ -72,24 +86,22 @@ def print_menu
   puts "\nPlease choose an option by entering a number:"
   puts '1 - List all books'
   puts '2 - List all people'
-  puts '3 - Create student'
-  puts '4 - Create teacher'
-  puts '5 - Create book'
-  puts '6 - Create rental'
-  puts '7 - List rentals of person'
-  puts '8 - Exit app'
+  puts '3 - Create person'
+  puts '4 - Create book'
+  puts '5 - Create rental'
+  puts '6 - List rentals of person'
+  puts '7 - Exit app'
 end
 
 def handle_menu_option(app, number)
   menu_options = {
     1 => :list_all_books,
     2 => :list_all_people,
-    3 => :create_student,
-    4 => :create_teacher,
-    5 => :create_book,
-    6 => :create_rental,
-    7 => :list_rentals_of_person,
-    8 => :exit_app
+    3 => :create_person,
+    4 => :create_book,
+    5 => :create_rental,
+    6 => :list_rentals_of_person,
+    7 => :exit_app
   }
 
   if menu_options.key?(number)
