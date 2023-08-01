@@ -1,3 +1,5 @@
+require 'json'
+
 # Include necessary class files
 require_relative '../classes/person'
 require_relative '../classes/student'
@@ -5,6 +7,7 @@ require_relative '../classes/teacher'
 require_relative '../classes/book'
 require_relative '../classes/rental'
 require_relative 'user_input'
+require_relative '../save_to_file'
 
 class App
   attr_accessor :books, :people
@@ -54,10 +57,24 @@ class App
     name = get_user_input('Name: ', :string)
     parent_permission = get_user_input('Has parent permission? [Y/N]: ', :boolean)
     classroom = get_user_input('Classroom: ', :string)
+  
     student = Student.new(age, classroom, name, parent_permission: parent_permission)
-    puts "🎉 Student #{name} created successfully"
+    jsondata = { :age=> age, :name=>name, :parent_permission=>parent_permission, :classroom=>classroom }
+    save_to_file('student.json', jsondata)
     @people << student
+    puts "🎉 Student '#{name}' created successfully"
   end
+  # def create_student
+  #   age = get_user_input('Age: ', :integer)
+  #   name = get_user_input('Name: ', :string)
+  #   parent_permission = get_user_input('Has parent permission? [Y/N]: ', :boolean)
+  #   classroom = get_user_input('Classroom: ', :string)
+  #   student = Student.new(age, classroom, name, parent_permission: parent_permission)
+  #   @people << student
+  #   puts "🎉 Student '#{name}' created successfully"
+  #   File.write('student.json', {age, name, parent_permission, classroom}, mode: 'a')
+  #   # @people << student
+  # end
 
   def create_teacher
     age = get_user_input('Age: ', :integer)
