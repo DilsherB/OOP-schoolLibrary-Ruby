@@ -37,82 +37,41 @@ class App
     end
   end
 
-  def create_student
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp
-    print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp
-    parent_permission = parent_permission.downcase != 'n'
-    print 'Classroom: '
-    classroom = gets.chomp
+  def create_student(age, name, parent_permission, classroom)
     puts "🎉 Student '#{name}' created successfully"
     @people << Student.new(age, classroom, name, parent_permission: parent_permission)
   end
 
-  def create_teacher
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp
-    print 'Specialization: '
-    specialization = gets.chomp
+  def create_teacher(age, name, specialization)
     puts "🎉 Teacher '#{name}' created successfully"
     @people << Teacher.new(age, specialization, name)
   end
 
-  def create_book
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
+  def create_book(title, author)
     puts "🎉 Book '#{title}' created successfully"
     @books << Book.new(title, author)
   end
 
-  def create_rental
-    if @books.empty?
-      puts 'No books available to rent'
-    else
-      puts 'Choose a book from the following list.'
-      display_books
-
-      if @people.empty?
-        puts 'No persons created. Kindly create a person before renting'
-      else
-        puts 'Choose a person from the following list.'
-        display_people
-
-        print 'Date: '
-        date = gets.chomp
-        Rental.new(date, @selected_book, @selected_person)
-        puts '🎉 Rental created successfully'
-      end
-    end
+  def create_rental(date, selected_book, selected_person)
+    Rental.new(date, selected_book, selected_person)
+    puts '🎉 Rental created successfully'
   end
 
   def display_books
     list_all_books
-    index = gets.chomp.to_i
-    @selected_book = @books[index]
   end
 
   def display_people
     list_all_people
-    index = gets.chomp.to_i
-    @selected_person = @people[index]
   end
 
-  def list_rentals_of_person
-    print 'ID of Person: '
-    id = gets.chomp.to_i
+  def list_rentals_of_person(id)
     person_selected = @people.select { |person| person.id == id }.first
     if person_selected.nil?
       puts 'No such person exists'
     else
       puts 'Rentals: '
-      person_selected.rentals.map do |rental|
+      person_selected.rentals.each do |rental|
         puts "Date: #{rental.date}, Book '#{rental.book.title}' by #{rental.book.author}"
       end
     end
