@@ -33,7 +33,7 @@ end
 
 def create_person(app)
   puts 'Do you want to create a student (1) or a teacher (2)?'
-  choice = get_integer_input('Enter the number of your choice: ')
+  choice = get_integer_input('Enter the number: ')
 
   case choice
   when 1
