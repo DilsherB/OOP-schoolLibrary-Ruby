@@ -1,0 +1,13 @@
+[
+  {
+    "age": 11,
+    "name": "a",
+    "parent_permission": true,
+    "classroom": "1"
+  },
+  {
+    "age": 41,
+    "name": "c",
+    "specialization": "m"
+  }
+]

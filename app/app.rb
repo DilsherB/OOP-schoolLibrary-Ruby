@@ -17,45 +17,9 @@ class App
     @people = []
   end
 
-  # def list_all_books
-  #   # if @books.empty?
-  #   #   puts 'No books available'
-  #     if File.exist?('./book.json')
-  #       books = JSON.parse(File.open('./book.json', 'r'))
-  #       books = Books.new(books[:title], books[:author])
-  #       # puts books
-  #       # new(books[])
-  #       if books.empty?
-  #         puts 'No books available'
-  #       else
-  #         books.map do |book|
-  #           puts "Title: '#{book['title']}', Author: '#{book['author']}'"
-  #         end
-  #       end
-  #     else
-  #       puts "File 'book.json' doesn't exist"
-  #     end
-  #   # else
-  #   #   @books.each_with_index { |book, index| puts "#{index + 1}): 📚 Title: '#{book.title}', Author: #{book.author}" }
-  #   # end
-  # end
   def list_all_books
     if @books.empty?
       puts 'No books available'
-      if File.exist?('./book.json')
-        file_contents = File.read('./book.json')
-        books = JSON.parse(file_contents)
-        
-        if books.empty?
-          puts 'No books available'
-        else
-          books.each do |book|
-            puts "Title: '#{book['title']}', Author: '#{book['author']}'"
-          end
-        end
-      else
-        puts "File 'book.json' doesn't exist"
-      end
     else
       @books.each_with_index { |book, index| puts "#{index + 1}): 📚 Title: '#{book.title}', Author: #{book.author}" }
     end
@@ -64,6 +28,18 @@ class App
   def list_all_people
     if @people.empty?
       puts 'No person created yet'
+      if File.exist?('./person.json')
+        person = JSON.parse(File.read('./person.json'))
+        puts "No person created yet" if person.empty?
+        person.each do |p| 
+          current_person =  "#{p[index]}): ID: #{p[id]}, Name: #{p[name]} Age: #{p[age]}"
+          current_person += ", Specialization: #{p[specialization]}" if p.is_a?(Teacher)
+          current_person += ", Classroom: #{p[classroom]}" if p.is_a?(Student)
+          puts current_person
+        end
+      else
+        puts "File 'person.json' doesn't exist"
+      end
     else
       @people.each_with_index do |person, index|
         info = "#{index + 1}): [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
@@ -96,7 +72,7 @@ class App
   
     student = Student.new(age, classroom, name, parent_permission: parent_permission)
     jsondata = { "age"=> age, "name"=>name, "parent_permission"=>parent_permission, "classroom"=>classroom }
-    save_to_file('student.json', jsondata)
+    save_to_file('person.json', jsondata)
     @people << student
     puts "🎉 Student '#{name}' created successfully"
   end
@@ -118,7 +94,7 @@ class App
     specialization = get_user_input('Specialization: ', :string)
     teacher = Teacher.new(age, specialization, name)
     jsondata = { :age=> age, :name=>name, :specialization=>specialization }
-    save_to_file('teacher.json', jsondata)
+    save_to_file('person.json', jsondata)
     puts "🎉 Teacher #{name} created successfully"
     @people << teacher
   end
