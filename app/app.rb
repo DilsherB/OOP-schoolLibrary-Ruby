@@ -81,6 +81,8 @@ class App
     name = get_user_input('Name: ', :string)
     specialization = get_user_input('Specialization: ', :string)
     teacher = Teacher.new(age, specialization, name)
+    jsondata = { :age=> age, :name=>name, :specialization=>specialization }
+    save_to_file('teacher.json', jsondata)
     puts "🎉 Teacher #{name} created successfully"
     @people << teacher
   end
@@ -89,6 +91,8 @@ class App
     title = get_user_input('Title: ', :string)
     author = get_user_input('Author: ', :string)
     book = Book.new(title, author)
+    jsondata = { :title=> title, :author=>author }
+    save_to_file('book.json', jsondata)
     puts "🎉 Book #{title} created successfully"
     @books << book
   end
@@ -104,6 +108,8 @@ class App
         display_people
         date = get_user_input('Date: ', :string)
         Rental.new(date, @selected_book, @selected_person)
+        jsondata = { "Book Name"=> @selected_book, "person"=>@selected_person, "date"=>date }
+        save_to_file('rental.json', jsondata)
         puts '🎉 Rental created successfully'
       end
     end
