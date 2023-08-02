@@ -19,7 +19,7 @@ def save_to_file(filename, data)
   else
 
     # Create the file
-    File.open(filename, 'w') {}
+    File.open(filename, 'w')
 
     # Add the data to the array
 
