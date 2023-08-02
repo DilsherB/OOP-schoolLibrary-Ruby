@@ -9,5 +9,11 @@
     "age": 41,
     "name": "c",
     "specialization": "m"
+  },
+  {
+    "age": 11,
+    "name": "asdf",
+    "parent_permission": true,
+    "classroom": "1"
   }
 ]

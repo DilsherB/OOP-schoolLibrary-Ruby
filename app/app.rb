@@ -30,9 +30,9 @@ class App
       puts 'No person created yet'
       if File.exist?('./person.json')
         person = JSON.parse(File.read('./person.json'))
-        puts "No person created yet" if person.empty?
-        person.each do |p| 
-          current_person =  "#{p[index]}): ID: #{p[id]}, Name: #{p[name]} Age: #{p[age]}"
+        puts 'No person created yet' if person.empty?
+        person.each do |p|
+          current_person = "#{p[index]}): ID: #{p[id]}, Name: #{p[name]} Age: #{p[age]}"
           current_person += ", Specialization: #{p[specialization]}" if p.is_a?(Teacher)
           current_person += ", Classroom: #{p[classroom]}" if p.is_a?(Student)
           puts current_person
@@ -69,9 +69,9 @@ class App
     name = get_user_input('Name: ', :string)
     parent_permission = get_user_input('Has parent permission? [Y/N]: ', :boolean)
     classroom = get_user_input('Classroom: ', :string)
-  
+
     student = Student.new(age, classroom, name, parent_permission: parent_permission)
-    jsondata = { "age"=> age, "name"=>name, "parent_permission"=>parent_permission, "classroom"=>classroom }
+    jsondata = { 'age' => age, 'name' => name, 'parent_permission' => parent_permission, 'classroom' => classroom }
     save_to_file('person.json', jsondata)
     @people << student
     puts "🎉 Student '#{name}' created successfully"
@@ -93,7 +93,7 @@ class App
     name = get_user_input('Name: ', :string)
     specialization = get_user_input('Specialization: ', :string)
     teacher = Teacher.new(age, specialization, name)
-    jsondata = { :age=> age, :name=>name, :specialization=>specialization }
+    jsondata = { age: age, name: name, specialization: specialization }
     save_to_file('person.json', jsondata)
     puts "🎉 Teacher #{name} created successfully"
     @people << teacher
@@ -103,7 +103,7 @@ class App
     title = get_user_input('Title: ', :string)
     author = get_user_input('Author: ', :string)
     book = Book.new(title, author)
-    jsondata = { :title=> title, :author=>author }
+    jsondata = { title: title, author: author }
     save_to_file('book.json', jsondata)
     puts "🎉 Book #{title} created successfully"
     @books << book
@@ -120,7 +120,7 @@ class App
         display_people
         date = get_user_input('Date: ', :string)
         Rental.new(date, @selected_book, @selected_person)
-        jsondata = { "Book Name"=> @selected_book, "person"=>@selected_person, "date"=>date }
+        jsondata = { 'Book Name' => @selected_book, 'person' => @selected_person, 'date' => date }
         save_to_file('rental.json', jsondata)
         puts '🎉 Rental created successfully'
       end

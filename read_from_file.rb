@@ -9,13 +9,13 @@
 # end
 
 def read_from_file(filename)
-  if File.exist?(filename)
-    contents = File.read(filename)
-    data = JSON.parse(contents)
-    if filename == 'person.json'
-      @people = data.map { |person| Person.new(person) }
-    elsif filename == 'book.json'
-      @books = data.map { |book| Book.new(book) }
-    end
+  return unless File.exist?(filename)
+
+  contents = File.read(filename)
+  data = JSON.parse(contents)
+  if filename == 'person.json'
+    @people = data.map { |person| Person.new(person) }
+  elsif filename == 'book.json'
+    @books = data.map { |book| Book.new(book) }
   end
 end
