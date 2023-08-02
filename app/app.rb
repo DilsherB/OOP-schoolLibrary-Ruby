@@ -20,6 +20,21 @@ class App
   def list_all_books
     if @books.empty?
       puts 'No books available'
+      if File.exist?('./book.json')
+        books = JSON.parse(File.open('./book.json', 'r'))
+        new(books[:title], books[:author])
+        # puts books
+        # new(books[])
+        if books.empty?
+          puts 'No books available'
+        else
+          books.map do |book|
+            puts "Title: '#{book['title']}', Author: '#{book['author']}'"
+          end
+        end
+      else
+        puts "File 'book.json' doesn't exist"
+      end
     else
       @books.each_with_index { |book, index| puts "#{index + 1}): 📚 Title: '#{book.title}', Author: #{book.author}" }
     end
