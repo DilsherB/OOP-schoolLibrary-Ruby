@@ -28,18 +28,6 @@ class App
   def list_all_people
     if @people.empty?
       puts 'No person created yet'
-      if File.exist?('./person.json')
-        person = JSON.parse(File.read('./person.json'))
-        puts 'No person created yet' if person.empty?
-        person.each do |p|
-          current_person = "#{p[index]}): ID: #{p[id]}, Name: #{p[name]} Age: #{p[age]}"
-          current_person += ", Specialization: #{p[specialization]}" if p.is_a?(Teacher)
-          current_person += ", Classroom: #{p[classroom]}" if p.is_a?(Student)
-          puts current_person
-        end
-      else
-        puts "File 'person.json' doesn't exist"
-      end
     else
       @people.each_with_index do |person, index|
         info = "#{index + 1}): [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
