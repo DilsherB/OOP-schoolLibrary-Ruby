@@ -17,18 +17,39 @@ class App
     @people = []
   end
 
+  # def list_all_books
+  #   # if @books.empty?
+  #   #   puts 'No books available'
+  #     if File.exist?('./book.json')
+  #       books = JSON.parse(File.open('./book.json', 'r'))
+  #       books = Books.new(books[:title], books[:author])
+  #       # puts books
+  #       # new(books[])
+  #       if books.empty?
+  #         puts 'No books available'
+  #       else
+  #         books.map do |book|
+  #           puts "Title: '#{book['title']}', Author: '#{book['author']}'"
+  #         end
+  #       end
+  #     else
+  #       puts "File 'book.json' doesn't exist"
+  #     end
+  #   # else
+  #   #   @books.each_with_index { |book, index| puts "#{index + 1}): 📚 Title: '#{book.title}', Author: #{book.author}" }
+  #   # end
+  # end
   def list_all_books
     if @books.empty?
       puts 'No books available'
       if File.exist?('./book.json')
-        books = JSON.parse(File.open('./book.json', 'r'))
-        new(books[:title], books[:author])
-        # puts books
-        # new(books[])
+        file_contents = File.read('./book.json')
+        books = JSON.parse(file_contents)
+        
         if books.empty?
           puts 'No books available'
         else
-          books.map do |book|
+          books.each do |book|
             puts "Title: '#{book['title']}', Author: '#{book['author']}'"
           end
         end
@@ -74,7 +95,7 @@ class App
     classroom = get_user_input('Classroom: ', :string)
   
     student = Student.new(age, classroom, name, parent_permission: parent_permission)
-    jsondata = { :age=> age, :name=>name, :parent_permission=>parent_permission, :classroom=>classroom }
+    jsondata = { "age"=> age, "name"=>name, "parent_permission"=>parent_permission, "classroom"=>classroom }
     save_to_file('student.json', jsondata)
     @people << student
     puts "🎉 Student '#{name}' created successfully"

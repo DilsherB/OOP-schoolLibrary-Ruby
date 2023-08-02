@@ -1,1 +1,8 @@
-{"age":17,"name":"M Kaif","parent_permission":true,"classroom":"12"}{"age":14,"name":"M Farhan","parent_permission":true,"classroom":"9"}{"age":55,"name":"M. Nawaz","parent_permission":true,"classroom":"Society"}{"age":5,"name":"sdf","parent_permission":false,"classroom":"415"}
+[
+  {
+    "age": 17,
+    "name": "adf",
+    "parent_permission": true,
+    "classroom": "1"
+  }
+]
