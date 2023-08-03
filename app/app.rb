@@ -106,7 +106,12 @@ class App
         display_people
         date = get_user_input('Date: ', :string)
         Rental.new(date, @selected_book, @selected_person)
-        jsondata = { book_name: @selected_book.title, Author: @selected_book.author, person: @selected_person.name, date: date }
+        jsondata = {
+          book_name: @selected_book.title,
+          Author: @selected_book.author,
+          person: @selected_person.name,
+          date: date
+        }
         save_to_file('rental.json', jsondata)
         puts '🎉 Rental created successfully'
       end
