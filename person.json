@@ -1,0 +1,17 @@
+[
+  {
+    "ID": 4580,
+    "class": "Student",
+    "age": 17,
+    "name": "M. Kaif",
+    "parent_permission": true,
+    "classroom": "10th"
+  },
+  {
+    "ID": 1558,
+    "class": "Teacher",
+    "age": 42,
+    "name": "Chaman Balouch",
+    "specialization": "Motivation"
+  }
+]
