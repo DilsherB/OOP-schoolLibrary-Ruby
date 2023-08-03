@@ -59,22 +59,11 @@ class App
     classroom = get_user_input('Classroom: ', :string)
 
     student = Student.new(age, classroom, name, parent_permission: parent_permission)
-    jsondata = { 'age' => age, 'name' => name, 'parent_permission' => parent_permission, 'classroom' => classroom }
+    jsondata = { age: age, name: name, parent_permission: parent_permission, classroom: classroom }
     save_to_file('person.json', jsondata)
     @people << student
     puts "🎉 Student '#{name}' created successfully"
   end
-  # def create_student
-  #   age = get_user_input('Age: ', :integer)
-  #   name = get_user_input('Name: ', :string)
-  #   parent_permission = get_user_input('Has parent permission? [Y/N]: ', :boolean)
-  #   classroom = get_user_input('Classroom: ', :string)
-  #   student = Student.new(age, classroom, name, parent_permission: parent_permission)
-  #   @people << student
-  #   puts "🎉 Student '#{name}' created successfully"
-  #   File.write('student.json', {age, name, parent_permission, classroom}, mode: 'a')
-  #   # @people << student
-  # end
 
   def create_teacher
     age = get_user_input('Age: ', :integer)
@@ -108,7 +97,7 @@ class App
         display_people
         date = get_user_input('Date: ', :string)
         Rental.new(date, @selected_book, @selected_person)
-        jsondata = { 'Book Name' => @selected_book, 'person' => @selected_person, 'date' => date }
+        jsondata = { book_name: @selected_book.title, person: @selected_person.name, date: date }
         save_to_file('rental.json', jsondata)
         puts '🎉 Rental created successfully'
       end
@@ -128,6 +117,7 @@ class App
   end
 
   def list_rentals_of_person
+    list_all_people
     id = get_user_input('ID of Person: ', :integer)
     person_selected = @people.find { |person| person.id == id }
     if person_selected.nil?

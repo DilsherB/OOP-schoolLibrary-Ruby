@@ -1,31 +1,19 @@
 [
   {
-    "age": 11,
-    "name": "a",
+    "age": 17,
+    "name": "M Kaif",
     "parent_permission": true,
-    "classroom": "1"
+    "classroom": "Inter"
   },
   {
-    "age": 41,
-    "name": "c",
-    "specialization": "m"
+    "age": 42,
+    "name": "Chaman Balouch",
+    "specialization": "Sociology"
   },
   {
-    "age": 11,
-    "name": "asdf",
+    "age": 14,
+    "name": "M Farhan",
     "parent_permission": true,
-    "classroom": "1"
-  },
-  {
-    "age": 11,
-    "name": "gb",
-    "parent_permission": true,
-    "classroom": "14"
-  },
-  {
-    "age": 16,
-    "name": "asdfg",
-    "parent_permission": true,
-    "classroom": "Geo"
+    "classroom": "10"
   }
 ]
