@@ -24,7 +24,6 @@ class App
     else
       @books.each_with_index { |book, index| puts "#{index + 1}): 📚 Title: '#{book.title}', Author: #{book.author}" }
     end
-    show_data('../book.json')
   end
 
   def list_all_people
@@ -110,6 +109,7 @@ class App
           book_name: @selected_book.title,
           Author: @selected_book.author,
           person: @selected_person.name,
+          person_ID: @selected_person.id,
           date: date
         }
         save_to_file('rental.json', jsondata)
