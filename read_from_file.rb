@@ -41,7 +41,7 @@ def get_data(filename)
   else
     json_array = []
   end
-  return json_array
+  json_array
 end
 
 def show_data(filename)

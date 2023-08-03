@@ -61,7 +61,14 @@ class App
     classroom = get_user_input('Classroom: ', :string)
 
     student = Student.new(age, classroom, name, parent_permission: parent_permission)
-    jsondata = { ID: student.id, class:'Student', age: age, name: name, parent_permission: parent_permission, classroom: classroom }
+    jsondata = {
+      ID: student.id,
+      class: 'Student',
+      age: age,
+      name: name,
+      parent_permission: parent_permission,
+      classroom: classroom
+    }
     save_to_file('person.json', jsondata)
     @people << student
     puts "🎉 Student '#{name}' created successfully"
@@ -99,7 +106,7 @@ class App
         display_people
         date = get_user_input('Date: ', :string)
         Rental.new(date, @selected_book, @selected_person)
-        jsondata = { book_name: @selected_book.title, person: @selected_person.name, date: date }
+        jsondata = { book_name: @selected_book.title, Author: @selected_book.author, person: @selected_person.name, date: date }
         save_to_file('rental.json', jsondata)
         puts '🎉 Rental created successfully'
       end

@@ -1,0 +1,24 @@
+[
+  {
+    "ID": 9680,
+    "class": "Student",
+    "age": 17,
+    "name": "M Kaif",
+    "parent_permission": true,
+    "classroom": "inter"
+  },
+  {
+    "ID": 5658,
+    "class": "Teacher",
+    "age": 42,
+    "name": "Chaman",
+    "specialization": "Math"
+  },
+  {
+    "ID": 7605,
+    "class": "Teacher",
+    "age": 41,
+    "name": "Dilsher",
+    "specialization": "Computer"
+  }
+]
