@@ -8,6 +8,7 @@ require_relative '../classes/book'
 require_relative '../classes/rental'
 require_relative 'user_input'
 require_relative '../save_to_file'
+require_relative '../read_from_file'
 
 class App
   attr_accessor :books, :people
@@ -23,6 +24,7 @@ class App
     else
       @books.each_with_index { |book, index| puts "#{index + 1}): 📚 Title: '#{book.title}', Author: #{book.author}" }
     end
+    show_data('../book.json')
   end
 
   def list_all_people
