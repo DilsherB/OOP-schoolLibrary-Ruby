@@ -42,5 +42,20 @@
     "age": 40,
     "name": "Mohsan Balouch",
     "specialization": "Business"
+  },
+  {
+    "ID": 5567,
+    "class": "Student",
+    "age": 12,
+    "name": "M.Ayan",
+    "parent_permission": true,
+    "classroom": "6th"
+  },
+  {
+    "ID": 6204,
+    "class": "Teacher",
+    "age": 35,
+    "name": "Asad Ali",
+    "specialization": "Electrons"
   }
 ]

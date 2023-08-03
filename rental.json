@@ -23,5 +23,12 @@
     "person": "Mohsan Balouch",
     "person_ID": 4742,
     "date": "01"
+  },
+  {
+    "book_name": "Electronics",
+    "Author": "Musa",
+    "person": "Asad Ali",
+    "person_ID": 6204,
+    "date": "03"
   }
 ]
