@@ -19,6 +19,14 @@ class App
   end
 
   def list_all_books
+    books_from_file = read_from_file('book.json')
+    if books_from_file.empty?
+      puts 'No books available'
+    else
+      books_from_file.each_with_index do |book, index|
+        puts "#{index + 1}): 📚 Title: '#{book['title']}', Author: #{book['author']}"
+      end
+    end
     if @books.empty?
       puts 'No books available'
     else
