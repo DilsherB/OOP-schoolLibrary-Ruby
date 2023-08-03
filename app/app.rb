@@ -61,7 +61,7 @@ class App
     classroom = get_user_input('Classroom: ', :string)
 
     student = Student.new(age, classroom, name, parent_permission: parent_permission)
-    jsondata = { age: age, name: name, parent_permission: parent_permission, classroom: classroom }
+    jsondata = { ID: student.id, class:'Student', age: age, name: name, parent_permission: parent_permission, classroom: classroom }
     save_to_file('person.json', jsondata)
     @people << student
     puts "🎉 Student '#{name}' created successfully"
@@ -72,7 +72,7 @@ class App
     name = get_user_input('Name: ', :string)
     specialization = get_user_input('Specialization: ', :string)
     teacher = Teacher.new(age, specialization, name)
-    jsondata = { age: age, name: name, specialization: specialization }
+    jsondata = { ID: teacher.id, class: 'Teacher', age: age, name: name, specialization: specialization }
     save_to_file('person.json', jsondata)
     puts "🎉 Teacher #{name} created successfully"
     @people << teacher
