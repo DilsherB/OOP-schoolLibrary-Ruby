@@ -1,13 +1,9 @@
 [
   {
     "book_name": "Raja Gidh",
-    "person": "M Kaif",
-    "date": "03.08.2023"
-  },
-  {
-    "book_name": "Peer-e-Kamal",
     "Author": "Bano Qudsia",
-    "person": "Dilsher",
-    "date": "03.08.2023"
+    "person": "M. Kaif",
+    "person_id": 4580,
+    "date": "08"
   }
 ]
