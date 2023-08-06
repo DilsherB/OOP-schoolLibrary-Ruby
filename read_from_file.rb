@@ -10,9 +10,8 @@
 
 def read_from_file(filename)
   if File.exist?(filename)
-    data = JSON.parse(File.read(filename))
+    JSON.parse(File.read(filename))
   else
-    data = []
+    []
   end
-  data
 end

@@ -19,12 +19,19 @@ class App
   end
 
   def list_all_books
+    books_from_file = read_from_file('book.json')
+    if books_from_file.empty?
+      puts 'No books available'
+    else
+      books_from_file.each_with_index do |book, index|
+        puts "#{index + 1}): 📚 Title: '#{book['title']}', Author: #{book['author']}"
+      end
+    end
     if @books.empty?
       puts 'No books available'
     else
       @books.each_with_index { |book, index| puts "#{index + 1}): 📚 Title: '#{book.title}', Author: #{book.author}" }
     end
-    show_data('../book.json')
   end
 
   def list_all_people
@@ -107,10 +114,8 @@ class App
         date = get_user_input('Date: ', :string)
         Rental.new(date, @selected_book, @selected_person)
         jsondata = {
-          book_name: @selected_book.title,
-          Author: @selected_book.author,
-          person: @selected_person.name,
-          date: date
+          book_name: @selected_book.title, Author: @selected_book.author,
+          person: @selected_person.name, person_ID: @selected_person.id, date: date
         }
         save_to_file('rental.json', jsondata)
         puts '🎉 Rental created successfully'
